@@ -1,0 +1,33 @@
+{
+  "name": "socket.io",
+  "version": "1.0.0",
+  "description": "socket.io with db",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js",
+    "dev": "eslint . --fix && nodemon src/index.js",
+    "lint": "eslint ."
+  },
+  "keywords": [
+    "socket.io",
+    "express",
+    "nodejs",
+    "javascript"
+  ],
+  "author": "muhammad_hamza_liaqat",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1"
+  },
+  "devDependencies": {
+    "eslint": "^9.14.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "globals": "^15.12.0",
+    "nodemon": "^3.1.7",
+    "prettier": "^3.3.3"
+  }
+}
