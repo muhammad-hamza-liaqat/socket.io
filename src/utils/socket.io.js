@@ -1,6 +1,6 @@
 const { connectionDb } = require('../config/mongodb.config')
 
-const users = {} // Store user IDs and their socket IDs
+const users = {}
 
 const initializeSocket = (io) => {
     io.on('connection', (socket) => {
@@ -12,6 +12,13 @@ const initializeSocket = (io) => {
         })
 
         socket.on('sendMessage', async ({ recipientId, message }) => {
+            console.log('Incoming sendMessage payload:', { recipientId, message })
+
+            if (!message || !message.sender || !message.text) {
+                console.error('Invalid message payload:', { recipientId, message })
+                return
+            }
+
             try {
                 const db = await connectionDb()
                 const chatCollection = db.collection('chats')
