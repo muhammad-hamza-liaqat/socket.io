@@ -4,7 +4,6 @@ const cors = require('cors')
 
 
 let PORT = process.env.PORT || 8080
-let hamza
 
 const app = express()
 
